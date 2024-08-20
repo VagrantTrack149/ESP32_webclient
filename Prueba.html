@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de tiempo</title>
+</head>
+<body>
+    <script>
+        function actualizarDiv() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "recibir_datos.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("Texto").innerText = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+        setInterval(actualizarDiv, 500);
+    </script>
+
+    <div id="Texto">
+        Esperando texto
+    </div>
+</body>
+</html>
