@@ -26,7 +26,7 @@ void enviarDatosPOST(String url, String postData) {
 
 void setup() {
   Serial.begin(9600);
-  WiFi.begin("Megacable_2.4G_6570", "4tCa7pFf"); //red
+  WiFi.begin("A", "12345678"); //red
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
